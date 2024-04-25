@@ -10,6 +10,8 @@ const WhackAMoleCard = () => {
   const handleClick = (index) => {
     if (index === activeHole) {
       setScore(score + 1); // Increase score on successful whack
+    } else {
+      setScore(0);
     }
     setActiveHole(null); // Hide mole after click
   };
@@ -26,23 +28,26 @@ const WhackAMoleCard = () => {
   }, []);  
 
   return (
-    <div className="whack-a-mole-card">
-      <div className="hole-container">
-        {holes.map((hole, index) => (
-          <div
-            key={index}
-            className={`hole ${index === activeHole ? 'active' : ''}`} // Set active hole style
-            style={{ backgroundColor: getRandomColor() }} // Assign random color
-            onClick={() => handleClick(index)}
-          />
-        ))}
+    <div>
+      <div className="whack-a-mole-card">
+        <div className="hole-container">
+          {holes.map((hole, index) => (
+            <div
+              key={index}
+              className={`hole ${index === activeHole ? 'active' : ''}`} // Set active hole style
+              style={{ backgroundImage: getRandomColor() }} // Assign random color
+              onClick={() => handleClick(index)}
+            />
+          ))}
+        </div>
       </div>
+      <h5>Score: {score}</h5>
     </div>
   );
 };
 
 function getRandomColor() {
-  const colors = ['blue', 'red']; // Define your desired colors
+  const colors = ['red']; // Define your desired colors
   return colors[Math.floor(Math.random() * colors.length)];
 }
 
