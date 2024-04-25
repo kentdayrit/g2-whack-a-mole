@@ -1,0 +1,26 @@
+.whack-a-mole-card {
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hole-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px; /* Adjust gap between holes */
+}
+
+.hole {
+  width: 50px; /* Adjust hole size */
+  height: 50px;
+  border-radius: 50%;
+  background-color: lightgray; /* Initial hole color */
+  cursor: pointer; /* Indicate clickable area */
+}
+
+.hole.active {
+  background-color: red; /* Color for active mole */
+}
+
+/* Add styles for other colors as needed */
