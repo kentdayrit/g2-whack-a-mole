@@ -12,7 +12,7 @@ const style = {
 function Header() {
     return (
         <div style={style}>
-            <h4>Whack-A-Mole</h4>
+            <h4>Hit-The-Button</h4>
         </div>
     );
   }
